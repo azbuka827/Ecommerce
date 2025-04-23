@@ -1,0 +1,31 @@
+{% load static %}
+
+
+
+<nav class="bg-white shadow">
+    {% comment %} Main container {% endcomment %}
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                {% comment %} Logo {% endcomment %}
+                <div>
+                    <a href="#" class="flex items-center px-2 py-4">
+
+                        <img class="h-10 w-10" src="{% static "images/cart.png" %}" alt="">
+                        <span class="text-gray-500 font-semibold text-xl">Pro Shop</span>
+                    </a>
+                    
+                </div>
+
+                {% comment %} Nav links {% endcomment %}
+                <div class="items-center flex space-x-1">
+                    <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Home</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</nav>

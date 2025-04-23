@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="{% static "myapp/src/output.css" %}">
 </head>
 <body>
+    {% comment %} Navigation {% endcomment %}
+    
+    {% include "myapp/navbar.html" %}
+
+
+
     {% block content %}
     
     {% endblock content %}
