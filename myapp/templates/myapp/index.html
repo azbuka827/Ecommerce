@@ -1,42 +1,54 @@
+{% extends "myapp/base.html" %}
+
 {% load static %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "myapp/src/output.css" %}">
-    <title>Document</title>
-</head>
-<body>
 
-    <nav>
-        <div>
-            <div>
-                <div>
-                    <div class="flex">
-                        <img class="h-10 w-10" src="{% static "images/cart.png" %}" alt="">
-                        <p class="text-xl">Pro Shop</p>
+{% block content %}
+{% comment %} Navigation {% endcomment %}
+        <nav class="bg-white shadow">
+            {% comment %} Main container {% endcomment %}
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        {% comment %} Logo {% endcomment %}
+                        <div>
+                            <a href="#" class="flex items-center px-2 py-4">
+
+                                <img class="h-10 w-10" src="{% static "images/cart.png" %}" alt="">
+                                <span class="text-gray-500 font-semibold text-xl">Pro Shop</span>
+                            </a>
+                            
+                        </div>
+
+                        {% comment %} Nav links {% endcomment %}
+                        <div class="items-center flex space-x-1">
+                            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Home</a>
+                            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+                            <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contacts</a>
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    {% for item in items %}
+        {% for item in items %}
 
-    <a href="{% url "myapp:detail" item.id %}">
+        <a href="{% url "myapp:detail" item.id %}">
 
-        <h2>{{item.id}}</h2>
-        <h2>{{item.name}}</h2>
-        <h2>{{item.price}}</h2>
-        <h2>{{item.discription}}</h2>
+            <h2>{{item.id}}</h2>
+            <h2>{{item.name}}</h2>
+            <h2>{{item.price}}</h2>
+            <h2>{{item.discription}}</h2>
 
 
-    </a>
-        
-    {% endfor %}
-</body>
-</html>
+        </a>
+            
+        {% endfor %}
+
+
+{% endblock content %}
+   
