@@ -6,21 +6,37 @@
 
 {% block content %}
 
+<main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+    <div class="sm:text-center lg:text-left">
+        <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Best offers</span>
+            <span class="block text-green-500 xl:inline">With Awsome Prices</span>
+        </h1>
+    </div>
+</main>
+
+
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 sm:space-x-12 sm:gap-30 md:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 gap-8">
+
+            {% for item in items %}
+
+            <a href="{% url "myapp:detail" item.id %}">
+                <div class="box-border h-150 w-100 p-4 rounded overflow-hidden shadow-lg">
+                    <img class="w-80" src="{{item.image.url}}" alt="">
+
+                    <div class="px-6 py-4">
+                        <p class="font-bold text-xl mb-2">{{item.name}}</p>
+                        <p class="font-bold text-xl mb-2 text-green-500">$: {{item.price}}</p>
+                        <p class="text-base  mb-2 text-gray-500"> {{item.description}}</p>
+                    </div>
+                </div>
+           
+            </a>
+            
+            {% endfor %}
+</div>
     
-{% for item in items %}
 
-<a href="{% url "myapp:detail" item.id %}">
-
-    <h2>{{item.id}}</h2>
-    <h2>{{item.name}}</h2>
-    <h2>{{item.price}}</h2>
-    <h2>{{item.discription}}</h2>
-    <img src="{{item.image.url}}" alt="">
-
-
-</a>
-    
-{% endfor %}
 
 {% endblock content %}
    
