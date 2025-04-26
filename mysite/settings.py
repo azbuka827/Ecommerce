@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'myapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
+
+
+LOGIN_REDIRECT_URL = "/" #куда перенаправить юзера после логина, это для логин вью на классах
+LOGIN_URL = "users:login"
+# LOGOUT_REDIRECT_URL = "users:logout" # куда перенапрвить после разлогинивания это для выхода вью на классах

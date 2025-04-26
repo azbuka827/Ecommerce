@@ -11,6 +11,16 @@
         <p class="mt-5">{{item.name}}</p>
         <p class="mt-5">$: {{item.price | intcomma }}</p>
         <p class="mt-5">{{item.description}}</p>
+        <p class="mt-5"><a href="{% url "users:seller_profile" item.seller.id %}">{{item.seller}}</a></p>
+        
+
+        <p class="mt-5">{{item.seller.profile.contact_number}}</p>
+
+        <div class="flex-col justify-start gap-2 p-2 mt-10 mr-1">
+            <a class="bg-green-600 p-2 mt-12 rounded-xl text-white" href="{% url "myapp:update_item" item.id %}">Update Item</a>
+            <a class="bg-red-600 p-2 mt-12 rounded-xl text-white" href="{% url "myapp:delete_item" item.id %}">Delete Item</a>
+        </div>
+        
     </div>
 
 </div>
